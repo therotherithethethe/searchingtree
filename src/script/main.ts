@@ -92,10 +92,15 @@ const symDirectTreeBypass = (treeNode: TreeNode) => {
 
     if(treeNode.isLeftNodeSetted()) {
         reverseDirectTreeBypass(<TreeNode>treeNode.leftNode);
+        treeBypassText += `${treeNode.num} `;
     }
-    treeBypassText += `${treeNode.num} `;
+
     if(treeNode.isRightNodeSetted()) {
         reverseDirectTreeBypass(<TreeNode>treeNode.rightNode);
+        //treeBypassText += `${treeNode.num} `;
+    }
+    if(!treeNode.isRightNodeSetted() && !treeNode.isLeftNodeSetted()) {
+        treeBypassText += `${treeNode.num} `;
     }
 
 }
